@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MegaMenu.Models.Categories>
+
+<div class="wrapper">
+    <nav class="menu">
+        <ul class="clearfix">
+            @foreach (var item in Model)
+            {
+            <li>
+                <a href="#">@item.Name</a>
+                @Html.Action("LoadChild", "Home", new { parentId = item.Id })
+            </li>
+                
+            }
+        </ul>
+    </nav>
+</div>
+
+
